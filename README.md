@@ -28,3 +28,5 @@ module "application_loadbalancer" {
 ## Outputs
 
 - `target_group_arn` - The target group's ARN - for use with services that need access to the TG
+- `lb_dns_name` - The FQDN of the ALB that spins up
+- `zone_id` - the DNS Zone ID of the ALB
