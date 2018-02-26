@@ -2,6 +2,7 @@ variable "vpc_id" {}
 variable "task_definition" {}
 variable "project" {}
 variable "port" {}
+variable "lb_port" {}
 variable "cluster_name" {}
 variable "environment" {}
 variable "health_check_path" {}
