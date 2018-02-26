@@ -40,7 +40,7 @@ resource "aws_lb_target_group" "main" {
 
 resource "aws_lb_listener" "http" {
   load_balancer_arn = "${aws_lb.main.id}"
-  port              = "${var.port}"
+  port              = "${var.lb_port}"
   protocol          = "HTTP"
 
   default_action {
