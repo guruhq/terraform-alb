@@ -13,11 +13,12 @@ resource "aws_lb" "main" {
 }
 
 resource "aws_lb_target_group" "main" {
-  name = "${var.project}-${var.environment}-target-group"
+  name        = "${var.project}-${var.environment}-target-group"
 
-  port     = "${var.port}"
-  protocol = "HTTP"
-  vpc_id   = "${var.vpc_id}"
+  port        = "${var.port}"
+  protocol    = "HTTP"
+  vpc_id      = "${var.vpc_id}"
+  target_type = "${var.target_type}"
 
   health_check {
     healthy_threshold   = "3"
