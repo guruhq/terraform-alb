@@ -18,3 +18,6 @@ variable "region" {
 variable "public_subnet_ids" {
   type    = "list"
 }
+variable "target_type" {
+  default = "instance"
+}
