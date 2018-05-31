@@ -50,7 +50,7 @@ resource "aws_lb_listener" "http" {
   }
 }
 
-resource "aws_lb_listener" "front_end" {
+resource "aws_lb_listener" "https" {
   load_balancer_arn = "${aws_lb.main.arn}"
   port              = "443"
   protocol          = "HTTPS"
