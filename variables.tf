@@ -21,3 +21,6 @@ variable "public_subnet_ids" {
 variable "target_type" {
   default = "instance"
 }
+variable "hc_matchers" {
+  default = "200,404"
+}

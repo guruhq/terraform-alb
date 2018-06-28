@@ -27,7 +27,7 @@ resource "aws_lb_target_group" "main" {
     timeout             = "3"
     path                = "${var.health_check_path}"
     unhealthy_threshold = "2"
-    matcher             = "200,404"
+    matcher             = "${var.hc_matchers}"
   }
   tags {
     Name        = "${var.project}-${var.environment}-target-group"
