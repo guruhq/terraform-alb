@@ -6,7 +6,7 @@ A Terraform module to create an Amazon Web Services (AWS) Application Load Balan
 
 ```hcl
 module "application_loadbalancer" {
-  source             = "git::ssh://git@github.com/guruhq/terraform-nlb?ref=1.1.0"
+  source             = "git::ssh://git@github.com/guruhq/terraform-nlb?ref=1.1.1"
   port               = "${var.port}"
   vpc_id             = "${var.vpc_id}"
   task_definition    = "${var.task_definition}"
@@ -27,6 +27,8 @@ module "application_loadbalancer" {
 - `environment` - Service environment (Default: `unknown`)
 - `target_type` - Allows you to choose between setting the target to be an instance or an IP
 - `vpc_id` - VPC to launch into (Default: `unknown`)
+- `hc_matchers` - a comma delimited list of usable return codes (Default: `200,404`)
+
 ## Outputs
 
 - `target_group_arn` - The target group's ARN - for use with services that need access to the TG
