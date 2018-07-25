@@ -24,3 +24,6 @@ variable "target_type" {
 variable "hc_matchers" {
   default = "200,404"
 }
+variable "deregistration_delay" {
+  default = 300
+}

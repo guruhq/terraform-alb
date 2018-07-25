@@ -20,6 +20,8 @@ resource "aws_lb_target_group" "main" {
   vpc_id      = "${var.vpc_id}"
   target_type = "${var.target_type}"
 
+  deregistration_delay = "${var.deregistration_delay}"
+
   health_check {
     healthy_threshold   = "3"
     interval            = "30"
