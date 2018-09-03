@@ -27,3 +27,15 @@ variable "hc_matchers" {
 variable "deregistration_delay" {
   default = 300
 }
+variable "healthy_threshold" {
+  default = 3
+}
+variable "unhealthy_threshold" {
+  default = 2
+}
+variable "interval" {
+  default = 5
+}
+variable "timeout" {
+  default = 4
+}
