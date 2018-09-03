@@ -6,7 +6,7 @@ A Terraform module to create an Amazon Web Services (AWS) Application Load Balan
 
 ```hcl
 module "application_loadbalancer" {
-  source             = "git::https://github.com/guruhq/terraform-alb?ref=2.0.1"
+  source             = "git::https://github.com/guruhq/terraform-alb?ref=2.0.2"
   cluster_name       = "${var.cluster_name}"
   vpc_id             = "${var.vpc_id}"
 
@@ -44,6 +44,10 @@ module "application_loadbalancer" {
 - `port` - which port for the LB to hit the service (Default: `unknown`)
 - `lb_port` - the port the LB will serve traffic  (Default: `80`)
 - `deregistration_delay` - time it will take to remove old deployments (Default `300`)
+- `healthy_threshold` - how many intervals to assign health
+- `unhealthy_threshold` - how many intervals to assign unhealthy
+- `interval` - interval between checks in seconds
+- `timeout` - amount of time in seconds before a timeout
 
 ## Outputs
 

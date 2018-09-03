@@ -23,12 +23,12 @@ resource "aws_lb_target_group" "main" {
   deregistration_delay = "${var.deregistration_delay}"
 
   health_check {
-    healthy_threshold   = "3"
-    interval            = "30"
+    healthy_threshold   = "${var.healthy_threshold}"
+    interval            = "${var.interval}"
     protocol            = "HTTP"
-    timeout             = "3"
+    timeout             = "${var.timeout}"
     path                = "${var.health_check_path}"
-    unhealthy_threshold = "2"
+    unhealthy_threshold = "${var.unhealthy_threshold}"
     matcher             = "${var.hc_matchers}"
   }
   tags {
