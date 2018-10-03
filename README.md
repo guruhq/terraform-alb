@@ -48,6 +48,7 @@ module "application_loadbalancer" {
 - `unhealthy_threshold` - how many intervals to assign unhealthy
 - `interval` - interval between checks in seconds
 - `timeout` - amount of time in seconds before a timeout
+- `slow_start` - The amount time for targets to warm up before the load balancer sends them a full share of requests. The range is 30-900 seconds or 0 to disable. (Default `0`)
 
 ## Outputs
 

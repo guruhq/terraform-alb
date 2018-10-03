@@ -39,3 +39,6 @@ variable "interval" {
 variable "timeout" {
   default = 4
 }
+variable "slow_start" {
+  default = 0
+}

@@ -21,6 +21,7 @@ resource "aws_lb_target_group" "main" {
   target_type = "${var.target_type}"
 
   deregistration_delay = "${var.deregistration_delay}"
+  slow_start           = "${var.slow_start}"
 
   health_check {
     healthy_threshold   = "${var.healthy_threshold}"
