@@ -13,7 +13,7 @@ resource "aws_lb" "main" {
 }
 
 resource "aws_lb_target_group" "main" {
-  name        = "${var.project}-${var.environment}-target-group"
+  name        = "${var.project}-${var.environment}-tg"
 
   port        = "${var.port}"
   protocol    = "HTTP"
@@ -33,7 +33,7 @@ resource "aws_lb_target_group" "main" {
     matcher             = "${var.hc_matchers}"
   }
   tags {
-    Name        = "${var.project}-${var.environment}-target-group"
+    Name        = "${var.project}-${var.environment}-tg"
     Project     = "${var.project}"
     Environment = "${var.environment}"
   }
