@@ -5,6 +5,12 @@ resource "aws_lb" "main" {
   internal           = "${var.lb_internal_bool}"
   load_balancer_type = "application"
 
+  access_logs {
+    bucket  = "${var.access_logs_bucket}"
+    prefix  = "${var.project}-${var.environment}"
+    enabled = "${var.access_logs_enabled}" 
+  }
+
   tags {
     Name        = "${var.project}-${var.environment}"
     Project     = "${var.project}"
