@@ -43,7 +43,7 @@ variable "slow_start" {
   default = 0
 }
 variable "access_logs_bucket" {
-  deafult = "guru-access-logs"
+  default = "guru-access-logs"
 }
 variable "access_logs_enabled" {
   default = "false"
