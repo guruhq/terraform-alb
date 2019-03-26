@@ -64,7 +64,7 @@ resource "aws_lb_listener" "https" {
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "${var.ssl_policy}"
-  certificate_arn   = "${var.certificate_arn"
+  certificate_arn   = "${var.certificate_arn}"
 
   default_action {
     target_group_arn = "${aws_lb_target_group.main.arn}"
