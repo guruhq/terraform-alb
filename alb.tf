@@ -1,6 +1,6 @@
 resource "aws_lb" "main" {
-  security_groups    = ["${var.lb_security_groups}"]
-  subnets            = ["${var.public_subnet_ids}"]
+  security_groups    = var.lb_security_groups
+  subnets            = var.public_subnet_ids
   name               = "${var.project}-${var.environment}"
   internal           = "${var.lb_internal_bool}"
   load_balancer_type = "application"
@@ -11,7 +11,7 @@ resource "aws_lb" "main" {
     enabled = "${var.access_logs_enabled}" 
   }
 
-  tags {
+  tags = {
     Name        = "${var.project}-${var.environment}"
     Project     = "${var.project}"
     Environment = "${var.environment}"
@@ -38,7 +38,7 @@ resource "aws_lb_target_group" "main" {
     unhealthy_threshold = "${var.unhealthy_threshold}"
     matcher             = "${var.hc_matchers}"
   }
-  tags {
+  tags = {
     Name        = "${var.project}-${var.environment}-tg"
     Project     = "${var.project}"
     Environment = "${var.environment}"
