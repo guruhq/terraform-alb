@@ -25,12 +25,10 @@ module "application_loadbalancer" {
   target_type        = "${var.target_type}"
 
   environment        = "${var.environment}"
-  region             = "${var.region}"
 }
 ```
 
 ## Variables
-- `region` - Where it all happens (Default: `us-west-2`)
 - `lb_internal_bool` - Boolean var to determain if the NLB should be public or private (Default: `true`)
 - `project` - Name of the project or application (Default: `unknown`)
 - `cluster_name` - Name of the cluster to launch into (Default: `unknown`)
