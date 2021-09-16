@@ -1,6 +1,3 @@
-variable "profile" {
-  default = "default"
-}
 variable "vpc_id" {}
 variable "task_definition" {}
 variable "project" {}
@@ -15,11 +12,8 @@ variable "lb_security_groups" {
 variable "lb_internal_bool" {
   default = "true"
 }
-variable "region" {
-  default = "us-west-2"
-}
 variable "public_subnet_ids" {
-  type    = "list"
+  type = "list"
 }
 variable "target_type" {
   default = "instance"
