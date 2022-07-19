@@ -51,3 +51,7 @@ variable "certificate_arn" {
 variable "ssl_policy" {
   default = "ELBSecurityPolicy-TLS-1-2-Ext-2018-06"
 }
+
+variable "target_group_name_override" {
+  default = null
+}

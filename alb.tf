@@ -1,3 +1,7 @@
+locals {
+  tg = var.target_group_name_override != null ? var.target_group_name_override : "${var.project}-${var.environment}-tg"
+
+}
 resource "aws_lb" "main" {
   security_groups    = var.lb_security_groups
   subnets            = var.public_subnet_ids
@@ -19,7 +23,7 @@ resource "aws_lb" "main" {
 }
 
 resource "aws_lb_target_group" "main" {
-  name = "${var.project}-${var.environment}-tg"
+  name = local.tg
 
   port        = var.port
   protocol    = "HTTP"
@@ -39,7 +43,7 @@ resource "aws_lb_target_group" "main" {
     matcher             = var.hc_matchers
   }
   tags = {
-    Name        = "${var.project}-${var.environment}-tg"
+    Name        = local.tg
     Project     = var.project
     Environment = var.environment
   }
