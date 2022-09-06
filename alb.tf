@@ -48,7 +48,7 @@ resource "aws_lb_target_group" "main" {
     Environment = var.environment
   }
   depends_on = [
-    "aws_lb.main"
+    aws_lb.main
   ]
 }
 
