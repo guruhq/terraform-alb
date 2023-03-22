@@ -46,7 +46,7 @@ variable "access_logs_enabled" {
   default = "false"
 }
 variable "certificate_arn" {
-  default = "arn:aws:acm:us-west-2:495243515911:certificate/a7b25b53-cf9c-4e16-8e25-d6dea0a78f23"
+  default = "arn:aws:acm:us-west-2:495243515911:certificate/184c0a93-a1fc-4815-ae30-26646ee54aa9"
 }
 variable "ssl_policy" {
   default = "ELBSecurityPolicy-TLS-1-2-Ext-2018-06"
